@@ -1,0 +1,32 @@
+1) composer install
+
+2) composer update
+
+3) edit .env
+
+	a) check if application key is generated, if not -> php artisan key:generate
+
+	b) db details should be in line with db details of machine
+
+4) php artisan migrate
+
+5)	check if machine used in development is windows then add:
+
+			"cross-env": "^5.0.1" 
+
+		to package.json
+6) if errors arise from running 
+
+		npm run dev
+
+	 to compile css files from app.scss, follow ff steps:
+
+		Step1: composer update
+		Step2: rm -rf node_modules
+		Step3: npm cache clean
+		Step4: npm install
+		Step5: npm outdated
+		In this step, I update my laravel-mix version to 1.2.0, it is in the package.json.
+		Step6: npm install
+		Step7: npm run dev
+
